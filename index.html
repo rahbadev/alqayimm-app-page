@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الدين القيم</title>
+    <meta name="description" content="حمل تطبيق الدين القيم المميز الآن - متوفر على App Store و Google Play">
+    <meta name="keywords" content="تطبيق, تحميل, موبايل, أندرويد, آيفون">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-logo.png">
+    <link rel="apple-touch-icon" href="app-logo.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="تطبيق الدين القيم">
+    <meta property="og:description" content="حمل التطبيق - متوفر على App Store و Google Play">
+    <meta property="og:image" content="app-logo.png">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Controls -->
+        <div class="header-controls">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="تبديل المظهر">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <!-- App Info Section -->
+        <div class="app-info">
+            <div class="app-logo">
+                <img src="app-logo.png" alt="شعار التطبيق" id="appLogo">
+            </div>
+            <h1 class="app-name">تطبيق الدين القيم</h1>
+            <p class="app-description">
+                تطبيق شامل للقرآن الكريم والأحاديث النبوية والأذكار اليومية. استمتع بتجربة دينية متكاملة مع واجهة جميلة
+                وسهلة الاستخدام
+            </p>
+        </div>
+
+        <!-- Screenshots Gallery -->
+        <div class="screenshots-section">
+            <h2 class="gallery-title">صور من التطبيق</h2>
+            <div class="screenshots-gallery">
+                <div class="gallery-container">
+                    <button class="gallery-nav prev" onclick="previousSlide()" aria-label="الصورة السابقة">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="gallery-wrapper">
+                        <div class="gallery-track" id="galleryTrack">
+                            <div class="screenshot-item active">
+                                <img src="screens/1.png" alt="لقطة شاشة 1" loading="lazy">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="screens/2.png" alt="لقطة شاشة 2" loading="lazy">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="screens/screenshot-3.png" alt="لقطة شاشة 3" loading="lazy">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="screens/screenshot-4.png" alt="لقطة شاشة 4" loading="lazy">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="screens/screenshot-5.png" alt="لقطة شاشة 5" loading="lazy">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="screens/screenshot-6.png" alt="لقطة شاشة 6" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="gallery-nav next" onclick="nextSlide()" aria-label="الصورة التالية">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+
+                <!-- Gallery Indicators -->
+                <div class="gallery-indicators">
+                    <span class="indicator active" onclick="goToSlide(0)"></span>
+                    <span class="indicator" onclick="goToSlide(1)"></span>
+                    <span class="indicator" onclick="goToSlide(2)"></span>
+                    <span class="indicator" onclick="goToSlide(3)"></span>
+                    <span class="indicator" onclick="goToSlide(4)"></span>
+                    <span class="indicator" onclick="goToSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+        <span class="indicator" onclick="goToSlide(4)"></span>
+        <span class="indicator" onclick="goToSlide(5)"></span>
+    </div>
+    </div>
+    </div>
+
+    <!-- Download Links -->
+    <div class="download-links">
+        <!-- App Store Link -->
+        <a href="#" class="download-btn app-store" role="button" aria-label="تحميل من App Store">
+            <div class="btn-content">
+                <i class="fab fa-apple" aria-hidden="true"></i>
+                <div class="btn-text">
+                    <span class="btn-subtitle">متوفر على</span>
+                    <span class="btn-title">App Store</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Google Play Link -->
+        <a href="#" class="download-btn google-play" role="button" aria-label="تحميل من Google Play">
+            <div class="btn-content">
+                <i class="fab fa-google-play" aria-hidden="true"></i>
+                <div class="btn-text">
+                    <span class="btn-subtitle">احصل عليه من</span>
+                    <span class="btn-title">Google Play</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Direct APK Download -->
+        <a href="#" class="download-btn apk-download" role="button" aria-label="تحميل ملف APK مباشرة">
+            <div class="btn-content">
+                <i class="fas fa-download" aria-hidden="true"></i>
+                <div class="btn-text">
+                    <span class="btn-subtitle">تحميل مباشر</span>
+                    <span class="btn-title">ملف APK</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 جميع الحقوق محفوظة • صُنع بـ <i class="fas fa-heart" style="color: #e74c3c;"></i> في فلسطين</p>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
