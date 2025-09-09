@@ -24,6 +24,10 @@
     --shadow-heavy: 0 16px 48px rgba(0, 0, 0, 0.5);
 }
 
+[data-theme="dark"] .gallery-indicators button {
+    background: rgba(255, 255, 255, 0.3);
+}
+
 body {
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     background: var(--bg);
@@ -32,12 +36,16 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 480px;
+    width: 100%;
     margin: auto;
-    padding: 24px;
+    padding: 20px;
+    box-sizing: border-box;
     position: relative;
 }
 
@@ -115,7 +123,7 @@ body {
 }
 
 .screenshots-section {
-    margin: 60px 0;
+    margin: 20px 0;
     animation: fadeInUp 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s both;
 }
 
@@ -214,7 +222,7 @@ body {
     height: 14px;
     border-radius: 50%;
     border: none;
-    background: var(--border);
+    background: rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
     position: relative;
@@ -359,5 +367,43 @@ body {
 
     50% {
         transform: translateY(-10px);
+    }
+}
+
+/* إضافة media query لتحسين الجوال */
+@media (max-width: 480px) {
+    .container {
+        padding: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .gallery-wrapper img {
+        max-width: 90vw;
+        border-radius: 16px;
+    }
+
+    .app-logo {
+        max-width: 80vw;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    #themeToggle {
+        top: 15px;
+        left: 15px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .gallery {
+        max-width: 100%;
+    }
+
+    #prev,
+    #next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
     }
 }
