@@ -1,0 +1,53 @@
+name: Publish from APK Name
+
+on:
+  push:
+    paths:
+      - 'apk/*.apk' # يعمل عند رفع أي ملف apk
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Process APK Version
+        id: process_apk
+        run: |
+          # العثور على ملف الـ APK (أول ملف يجده)
+          FILE_PATH=$(ls apk/*.apk | head -n 1)
+          
+          # استخراج اسم الملف فقط: app_5.1(20).apk
+          FILENAME=$(basename "$FILE_PATH")
+          
+          # حذف الامتداد .apk وتخزين الاسم: app_5.1(20)
+          NAME_NO_EXT="${FILENAME%.*}"
+          
+          # حذف البادئة 'app_' للحصول على الرقم الصافي: 5.1(20)
+          VERSION="${NAME_NO_EXT#app_}"
+          
+          echo "الإصدار المكتشف: $VERSION"
+          
+          # هنا السحر: ننسخ الملف ونسميه اسماً ثابتاً للرابط
+          cp "$FILE_PATH" alayimm.apk
+          
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ env.VERSION }}
+          name: الإصدار ${{ env.VERSION }}
+          body: |
+            تحديث جديد لتطبيق الدين القيم.
+            رقم الإصدار: ${{ env.VERSION }}
+          files: alayimm.apk # نرفع الملف بالاسم الثابت
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
