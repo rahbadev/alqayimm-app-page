@@ -14,6 +14,8 @@
 
 <body>
     <div class="container">
+
+
         <button id="themeToggle" aria-label="تبديل المظهر"><i class="fas fa-moon"></i></button>
         <div class="app-info">
             <img src="app-logo.png" alt="شعار التطبيق" class="app-logo">
@@ -27,6 +29,7 @@
                     <button id="prev" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="gallery-wrapper">
+                    <div class="skeleton-loader" id="skeletonLoader"></div>
                     <img id="galleryImg" src="screens/1.png" alt="لقطة شاشة" loading="eager">
                 </div>
                 <div class="gallery-side gallery-right">
