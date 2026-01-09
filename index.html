@@ -3,55 +3,75 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>تطبيق الدين القيم</title>
-    <link rel="icon" href="app-logo.png">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الدين القيم - جاري التحويل</title>
+
+    <meta http-equiv="refresh" content="1; url=https://rahbadev.github.io/projects/alqayimm_app/">
+
+    <style>
+        body {
+            background-color: #0f172a;
+            /* نفس لون خلفية النظام الجديد */
+            color: #f8fafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-top: 5px solid #6366f1;
+            /* لون التطبيق */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <script>
+        // استبدل الرابط أدناه برابط صفحة المشروع الجديدة
+        const newUrl = "https://rahbadev.github.io/projects/alqayimm_app/";
+
+        window.onload = function () {
+            // تحويل فوري
+            window.location.replace(newUrl);
+        };
+    </script>
 </head>
 
 <body>
-    <div class="container">
 
+    <div class="loader"></div>
+    <h2>تم تحديث صفحة التطبيق</h2>
+    <p>جاري نقلك إلى التصميم الجديد...</p>
 
-        <button id="themeToggle" aria-label="تبديل المظهر"><i class="fas fa-moon"></i></button>
-        <div class="app-info">
-            <img src="app-logo.png" alt="شعار التطبيق" class="app-logo">
-            <h1 class="app-name">تطبيق الدين القيم</h1>
-            <p class="app-description">تطبيق يسهل الوصول إلى محتوى معهد الدين القيم بسهولة ويسر.</p>
-        </div>
-        <div class="screenshots-section">
-            <!-- حذف عنوان صور من التطبيق -->
-            <div class="gallery">
-                <div class="gallery-side gallery-left">
-                    <button id="prev" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="gallery-wrapper">
-                    <div class="skeleton-loader" id="skeletonLoader"></div>
-                    <img id="galleryImg" src="screens/1.png" alt="لقطة شاشة" loading="eager">
-                </div>
-                <div class="gallery-side gallery-right">
-                    <button id="next" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
-                </div>
-            </div>
-            <div id="indicators" class="gallery-indicators"></div>
-        </div>
-        <div class="download-links">
-            <a href="#" class="download-btn app-store" style="opacity: 0.6; cursor: not-allowed;"
-                onclick="event.preventDefault(); alert('قريباً على App Store');"><i class="fab fa-apple"></i> قريباً</a>
-            <a href="https://play.google.com/store/apps/details?id=com.alqayim.btech&hl=ar"
-                class="download-btn google-play" target="_blank"><i class="fab fa-google-play"></i> Google Play</a>
-            <a href="https://github.com/rahbadev/alqayimm-app-page/releases/latest/download/alayimm.apk"
-                class="download-btn apk-download" download><i class="fas fa-download"></i>
-                ملف APK</a>
-        </div>
-        <footer class="footer">
-            <p>جميع الحقوق محفوظة © 2025</p>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+    <p style="font-size: 0.9rem; opacity: 0.7;">
+        إذا لم يتم نقلك تلقائياً، <a href="https://rahbadev.github.io/projects/alqayimm_app/">اضغط هنا</a>
+    </p>
+
 </body>
 
 </html>
